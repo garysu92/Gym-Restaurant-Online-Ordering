@@ -15,11 +15,11 @@ export const Header = () => {
                     <Link to="/">
                         <div>Home</div>
                     </Link>
-                    <Link to="#about">
+                    <Link to="#about" reloadDocument>
                         <div>About</div>
                     </Link>
                 </div>
-                <div class="flex items=center justify-center space-x-4 border-solid">
+                <div className="flex items=center justify-center space-x-4 border-solid">
                     <Link to="/cart">
                         <img src={cart} alt="Cart"></img>
                     </Link>

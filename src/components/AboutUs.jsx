@@ -3,8 +3,8 @@ import aboutImage from "../assets/images/tmp.png";
 export const About = () => {
 
     return (
-        <div>
-            <div className="p-24 grid grid-cols-2">
+        <div id="about">
+            <div className="p-24 grid grid-cols-2 border-solid">
                 <div className="">
                     <h2 className="text-2xl font-medium">About Us</h2>
                     <p className="text-lg">

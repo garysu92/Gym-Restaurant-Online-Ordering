@@ -3,9 +3,15 @@ import React from "react";
 import { ProductCard } from "./ProductCard";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { useDispatch } from "react-redux";
+import { addToCart } from "../stores/cart/cartSlice";
 
 export const Products = () => {
      const [products, setProducts] = useState([])
+     const dispatch = useDispatch();
+     const addCart = (product) => {
+        dispatch(addToCart(product))
+     }
      const responsive = {
         superLargeDesktop: {
           // the naming can be any, depends on you.
@@ -32,16 +38,18 @@ export const Products = () => {
             .then(data => setProducts(data?.data))
             .catch(e => console.log(e))
      }, [])
-     
+    const onAddProduct = (product) => {
+        console.log("Added to cart")
+    }
     return (
-        <div className="container mx-auto pb-4 w-2/3 text">
+        <div className="container mx-auto pb-4 w-2/3 text bg-black">
             <h2>Products</h2>
             <Carousel responsive={responsive}>
                 {
                     products.length > 0 && products.map((product, index) => {
                         return (
                             <div className="w-full p-3 flex align-center border-solid">
-                                <ProductCard key={index} product={product}></ProductCard>
+                                <ProductCard key={index} product={product} onAddProduct={addCart}></ProductCard>
                             </div>
                         )
                     })

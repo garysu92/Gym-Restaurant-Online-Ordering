@@ -4,11 +4,11 @@ import { Products } from "../../components/Products";
 
 const Home = () => {
     return (
-        <>
-        <Banner />
-        <Products />
-        <About />
-        </>
+        <div className="border-green-500 border-solid">
+            <Banner />
+            <Products />
+            <About />
+        </div>
     )
 }
 

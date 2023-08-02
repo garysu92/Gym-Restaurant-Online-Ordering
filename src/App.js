@@ -4,7 +4,7 @@ import Navigation from './navigation';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App border-solid border-red-500">
       <Navigation></Navigation>
     </div>
   );
