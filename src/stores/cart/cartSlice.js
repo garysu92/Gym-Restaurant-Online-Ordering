@@ -11,11 +11,11 @@ export const cartSlice = createSlice({
         addToCart: (state, action) => {
             let alreadyInCart = false;
             for (let i = 0; i < state.products.length; i++) {
-                if (state.products[i].id === action.payload.id) {
-                    alreadyInCart = true
+                if (state.products[i]._id === action.payload._id) {
+                    alreadyInCart = true;
                 }
             }
-            return { products: alreadyInCart ? state.products.map(product => product.id === action.payload.id ? {...product, amount: product.amount + 1} : product) : 
+            return { products: alreadyInCart ? state.products.map(product => product._id === action.payload._id ? {...product, amount: product.amount + 1} : product) : 
                         [...state.products, {...action.payload, amount: 1}]}
         },
         clearCart: (state) => {
@@ -23,10 +23,10 @@ export const cartSlice = createSlice({
         },
         incrementProductAmount: (state, action) => {
             console.log('increment');
-            return { products: state.products.map(product => product.id === action.payload.id ? {...product, amount: product.amount + 1} : product)}
+            return { products: state.products.map(product => product._id === action.payload._id ? {...product, amount: product.amount + 1} : product)}
         },
         decrementProductAmount: (state, action) => {
-            return { products: state.products.map(product => product.id === action.payload.id ? {...product, amount: product.amount - 1} : product)}
+            return { products: state.products.map(product => product._id === action.payload._id ? {...product, amount: product.amount - 1} : product)}
         }
     }
 })

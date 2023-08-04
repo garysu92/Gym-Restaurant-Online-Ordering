@@ -38,9 +38,7 @@ export const Products = () => {
             .then(data => setProducts(data?.data))
             .catch(e => console.log(e))
      }, [])
-    const onAddProduct = (product) => {
-        console.log("Added to cart")
-    }
+
     return (
         <div className="container mx-auto pb-4 w-2/3 text bg-black">
             <h2>Products</h2>

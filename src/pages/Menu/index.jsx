@@ -10,7 +10,8 @@ const Menu = () => {
     const products = useSelector(getAllProducts);
     const [activeTab, setActiveTab] = useState('');
     const [activeTabIndex, setActiveTabIndex] = useState(0);
-
+    
+    // get products, which is empty, when mount
     useEffect(() => {
         dispatch(fetchProducts())
     }, [])
@@ -23,7 +24,6 @@ const Menu = () => {
         setActiveTab(newActiveTab);
         let categories = products.products.map((product) => product.name.name);
         let index = categories.findIndex(category => newActiveTab === category);
-        console.log(index);
         if (index > -1) {
             setActiveTabIndex(index);
         } else {

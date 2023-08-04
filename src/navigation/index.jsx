@@ -11,9 +11,13 @@ import { cartProducts } from "../stores/cart/cartSlice";
 
 const Navigation = () => {
     const productsInCart = useSelector(cartProducts);
+    let totalItems = 0;
+    for (let i = 0; i < productsInCart.length; i++) {
+        totalItems += productsInCart[i].amount;
+    }
     return (
         <BrowserRouter>
-            <Header cartCount={productsInCart ? productsInCart.length : 0}/>
+            <Header cartCount={productsInCart ? totalItems : 0}/>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
