@@ -21,9 +21,9 @@ const calculateOrderAmount = (orderItems) => {
     );
     return itemsPrice * 100;
 }
-
+//"https://gym-ezus.onrender.com"
 var corsOptions = {
-    origin: "http://localhost:3000"//"https://gym-ezus.onrender.com"
+    origin: "http://localhost:3000"
 }
 
 app.use(cors(corsOptions));
