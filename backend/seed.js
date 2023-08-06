@@ -3,14 +3,14 @@ const MongoClient = require("mongodb").MongoClient;
 const _ = require("lodash");
 
 async function main() {
-    const uri = "mongodb://localhost://27017";
+    const uri = "mongodb+srv://garysu92:garysu92@cluster0.vfzjujj.mongodb.net/";
     const client = new MongoClient(uri);
 
     try {
         await client.connect();
 
-        const productsCollection = client.db("food-ordering").collection("products");
-        const categoriesCollection = client.db("food-ordering").collection("categories");
+        const productsCollection = client.db("test").collection("products");
+        const categoriesCollection = client.db("test").collection("categories");
 
         productsCollection.drop()
         categoriesCollection.drop()
