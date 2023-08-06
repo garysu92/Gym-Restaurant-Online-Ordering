@@ -35,7 +35,7 @@ const PaymentForm = () => {
 
         setLoading(true);
         try {
-            const { error: backeEndError, clientSecret } = await fetch('http://localhost:8080/create-payment-intent', {
+            const { error: backeEndError, clientSecret } = await fetch('https://gym-b.onrender.com/api/products-by-categories', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'
