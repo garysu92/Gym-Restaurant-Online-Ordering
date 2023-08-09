@@ -7,8 +7,8 @@ const ProductDetailCard = ({ product, onAddProduct }) => {
     }
 
     return (
-        <div className="p-4 m-4 mx-auto rounded-lg bg-slate-50 flex flex-col border-solid">
-            <div id="product-card-info-container" className="border-solid">
+        <div className="p-4 ml-0 m-4 rounded-lg bg-gray-200 flex flex-col" style={{width: '250px'}}>
+            <div id="product-card-info-container">
                 <div className="flex flex-col items-center justify-between">
                     <h2 className="text-2xl">{product.name}</h2>
                     <p className="text-2xl text-gray-500">
@@ -19,11 +19,11 @@ const ProductDetailCard = ({ product, onAddProduct }) => {
                     </div>
                 </div>
                 <div className="w-full flex items-center justify-center">
-                    <img src={product.imageUrl} className="w-40 h-40 rounded-xl object-cover" alt={product.name} />
+                    <img src={require(`../assets/images/${product.imageUrl}`)} className="w-40 h-40 rounded-xl object-cover" alt={product.name} />
                 </div>
             </div>
-            <div className="w-full flex items-center justify-center">
-                <Button product={product} onClick={addProduct} >Add to Cart</Button>
+            <div className="w-full flex items-center justify-center mt-4">
+                <Button product={product} onClick={addProduct} className="hover:bg-green-500">Add to Cart</Button>
             </div>
         </div>
     )

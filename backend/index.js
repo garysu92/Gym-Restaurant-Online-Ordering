@@ -23,7 +23,7 @@ const calculateOrderAmount = (orderItems) => {
 }
 //"https://gym-ezus.onrender.com"
 var corsOptions = {
-    origin: "http://localhost:3000"
+    origin: "https://gym-ezus.onrender.com"
 }
 
 app.use(cors(corsOptions));

@@ -10,8 +10,6 @@ import { StripeWrapper } from "../../components/PaymentForm"
 const Cart = () => {
     const dispatch = useDispatch();
     const cart = useSelector(cartProducts);
-    console.log("hi")
-    console.log(cart);
     const [activeTab, setActiveTab] = useState('Summary');
 
     const [categories] = useState(['Summary', 'Delivery', 'Payment']);

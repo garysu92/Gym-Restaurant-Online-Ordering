@@ -6,6 +6,7 @@ import SignUp from "../pages/SignUp";
 import Menu from "../pages/Menu";
 import Cart from "../pages/Cart";
 import Paid from "../pages/Paid";
+import About from "../pages/About";
 import { useSelector } from "react-redux";
 import { cartProducts } from "../stores/cart/cartSlice";
 
@@ -20,11 +21,10 @@ const Navigation = () => {
             <Header cartCount={productsInCart ? totalItems : 0}/>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<SignUp />} />
                 <Route path="/menu" element={<Menu />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/paid" element={<Paid />} />
+                <Route path="/about" element={<About />} />
             </Routes>
         </BrowserRouter>
     )

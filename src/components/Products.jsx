@@ -43,22 +43,22 @@ export const Products = () => {
             .catch(e => console.log(e))
      }, [])
     if (loaded === false) {
-      return <div className="text-white text-3xl font-bold h-60vh flex items-center justify-center h-screen">Products are loading...</div>
+      return <div className="text-black text-3xl font-bold h-60vh flex items-center justify-center h-screen">Products are loading...</div>
     }
     return (
-        <div className="container mx-auto pb-4 w-2/3 text bg-black">
-            <h2>Products</h2>
-            <Carousel responsive={responsive}>
-              {
-                  products.length > 0 && products.map((product, index) => {
-                      return (
-                          <div className="w-full p-3 flex align-center border-solid">
-                              <ProductCard key={index} product={product} onAddProduct={addCart}></ProductCard>
-                          </div>
-                      )
-                  })
-              }
-            </Carousel>
-        </div>
+      <div className="container mx-auto flex flex-col items-center py-4 w-2/3 bg-white">
+      <h2 className="text-center mb-4 font-anton text-3xl">Products</h2>
+      <div className="w-full">
+        <Carousel responsive={responsive}>
+          {products.length > 0 &&
+            products.map((product, index) => (
+              <div className="w-full p-3 flex justify-center border-solid" key={index}>
+                <ProductCard product={product} onAddProduct={addCart} />
+              </div>
+            ))}
+        </Carousel>
+      </div>
+    </div>
+    
     )
 }
