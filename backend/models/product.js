@@ -10,10 +10,11 @@ const CategorySchema = new Schema(
 const ProductSchema = new Schema(
     {
         name: { type: String, required: true },
-        adjective: { type: String, required: true },
         description: { type: String, required: true },
         price: { type: String, required: true },
         category: { type: String, required: true },
+        calories: { type: String, required: true },
+        protein: { type: String, required: true }
     }
 )
 

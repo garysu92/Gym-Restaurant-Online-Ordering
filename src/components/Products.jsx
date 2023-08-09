@@ -9,6 +9,7 @@ import { addToCart } from "../stores/cart/cartSlice";
 export const Products = () => {
      const [products, setProducts] = useState([])
      const dispatch = useDispatch();
+     const [loaded, setLoaded] = useState(false);
      const addCart = (product) => {
         dispatch(addToCart(product))
      }
@@ -35,23 +36,28 @@ export const Products = () => {
      useEffect(() => {
         fetch("https://gym-b.onrender.com/api/products")
             .then(response => response.json())
-            .then(data => setProducts(data?.data))
+            .then(data => {
+              setProducts(data?.data);
+              setLoaded(true); // Set loaded to true after successful fetch
+            })
             .catch(e => console.log(e))
      }, [])
-
+    if (loaded === false) {
+      return <div className="text-white text-3xl font-bold h-60vh flex items-center justify-center h-screen">Products are loading...</div>
+    }
     return (
         <div className="container mx-auto pb-4 w-2/3 text bg-black">
             <h2>Products</h2>
             <Carousel responsive={responsive}>
-                {
-                    products.length > 0 && products.map((product, index) => {
-                        return (
-                            <div className="w-full p-3 flex align-center border-solid">
-                                <ProductCard key={index} product={product} onAddProduct={addCart}></ProductCard>
-                            </div>
-                        )
-                    })
-                }
+              {
+                  products.length > 0 && products.map((product, index) => {
+                      return (
+                          <div className="w-full p-3 flex align-center border-solid">
+                              <ProductCard key={index} product={product} onAddProduct={addCart}></ProductCard>
+                          </div>
+                      )
+                  })
+              }
             </Carousel>
         </div>
     )
