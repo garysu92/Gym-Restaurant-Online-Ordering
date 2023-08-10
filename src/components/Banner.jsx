@@ -1,5 +1,3 @@
-import Button from "./elements/Button";
-
 export const Banner = () => {
     return (
         <div className="banner w-full md:w-2/3 px-7 mx-auto relative flex items-center-justify-between border-solid mt-8">
@@ -10,7 +8,7 @@ export const Banner = () => {
                 <p className="font-semibold text-lg text-red-600 py-2">
                 </p>
                 <div className="btn-container">
-                    <a href="/menu" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg">Menu</a>
+                    <Link to="/menu" className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg">Menu</Link>
                 </div>
             </div>
         </div>
