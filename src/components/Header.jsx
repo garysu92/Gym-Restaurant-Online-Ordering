@@ -16,7 +16,7 @@ export const Header = ({ cartCount }) => {
                     <Link to="/">
                         <div>Home</div>
                     </Link>
-                    <Link to="/about" reloadDocument>
+                    <Link to="/about">
                         <div>About</div>
                     </Link>
                 </div>
