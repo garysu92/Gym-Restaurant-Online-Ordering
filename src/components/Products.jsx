@@ -34,7 +34,7 @@ export const Products = () => {
       };
 
      useEffect(() => {
-        fetch("https://gym-b.onrender.com/api/products")
+        fetch("https://gym-b-prpe.onrender.com/api/products")
             .then(response => response.json())
             .then(data => {
               setProducts(data?.data);
